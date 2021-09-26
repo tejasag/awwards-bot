@@ -2,7 +2,7 @@
   "arrowParens": "always",
   "endOfLine": "lf",
   "jsxBracketSameLine": true,
-  "useTabs": true,
+  "useTabs": false,
   "singleQuote": false,
   "tabWidth": 2,
   "semi": true 
