@@ -6,6 +6,7 @@
 	"dependencies": {
 		"@slack/bolt": "^3.6.0",
 		"@types/node": "^14.0.14",
+		"airtable-plusplus": "^0.3.2",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
 		"ts-node": "^8.10.2",
@@ -14,12 +15,12 @@
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^4.1.0",
 		"@typescript-eslint/parser": "^4.1.0",
-		"eslint": "^7.8.1",
+		"eslint": "^7.32.0",
 		"eslint-config-airbnb": "^18.2.0",
-		"eslint-config-prettier": "^6.11.0",
+		"eslint-config-prettier": "^8.3.0",
 		"eslint-config-wesbos": "^1.0.0",
 		"eslint-plugin-html": "^6.1.0",
-		"eslint-plugin-import": "2.20.0",
+		"eslint-plugin-import": "2.22.1",
 		"eslint-plugin-jsx-a11y": "6.2.3",
 		"eslint-plugin-prettier": "^3.1.4",
 		"eslint-plugin-react": "7.18.0",
@@ -41,10 +42,5 @@
 		"lint:check": "eslint \"src/**/*.{js,ts}\" --quiet",
 		"check": "yarn run format:check && yarn run lint:check",
 		"check:fix": "yarn run format && yarn run lint"
-	},
-	"husky": {
-		"hooks": {
-			"pre-push": "yarn lint:check && yarn format:check"
-		}
 	}
 }

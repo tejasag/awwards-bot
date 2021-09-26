@@ -7,14 +7,30 @@ import {
 } from "./middleware/index";
 import voteModal from "./modals/voteModal";
 import * as features from "./features/index";
+import { ProjectsDatabase, VotesDatabase, AirtableField } from "./airtable";
+import { AirtablePlusPlus } from "airtable-plusplus";
 
-const app = new App({
-	token: token,
-	appToken: app_token,
-	socketMode: true,
-});
+export class AwwwardsBot extends App {
+	projects: AirtablePlusPlus<AirtableField>;
+	votes: AirtablePlusPlus<AirtableField>;
+	mainChannel: string;
 
-(async () => {
+	constructor() {
+		super({
+			token: token,
+			appToken: app_token,
+			socketMode: true,
+		});
+
+		this.projects = ProjectsDatabase;
+		this.votes = VotesDatabase;
+		this.mainChannel = "C025YG64801";
+	}
+}
+
+const app = new AwwwardsBot();
+
+(async (): Promise<void> => {
 	// Start your app
 	await app.start();
 

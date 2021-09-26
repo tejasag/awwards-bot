@@ -29,7 +29,13 @@ const voteModal = (messageTs: string): IModal => {
 
 	let modalBlocks: Array<IHeaderBlock | IInputBlock> = [];
 
-	let categories = ["Creativity", "Usability", "Design", "Content", "Mobility"];
+	let categories = [
+		"Creativity",
+		"Usability",
+		"Design",
+		"Content",
+		"Responsiveness",
+	];
 
 	categories.forEach((n) => {
 		let header: IHeaderBlock = {
@@ -63,18 +69,18 @@ const voteModal = (messageTs: string): IModal => {
 					text: "Select a rating",
 					emoji: true,
 				},
-				action_id: `vote_selection`,
+				action_id: `choice`,
 				options: inputOptions,
 			},
 			label: {
 				type: "plain_text",
-				text: "Choose wisely!",
+				text: n,
 				emoji: true,
 			},
-			block_id: `vote_block_${n.toLowerCase()}`,
+			block_id: n.toLowerCase(),
 		};
 
-		modalBlocks.push(header);
+		// modalBlocks.push(header);
 		modalBlocks.push(input);
 	});
 
