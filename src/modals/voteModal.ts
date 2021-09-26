@@ -6,7 +6,7 @@ import {
 } from "../types/modal";
 
 const voteModal = (messageTs: string): IModal => {
-  let modal: IModal = {
+  const modal: IModal = {
     callback_id: `voteModal_${messageTs}`,
     type: "modal",
     title: {
@@ -27,9 +27,9 @@ const voteModal = (messageTs: string): IModal => {
     // blocks: [],
   };
 
-  let modalBlocks: Array<IHeaderBlock | IInputBlock> = [];
+  const modalBlocks: Array<IHeaderBlock | IInputBlock> = [];
 
-  let categories = [
+  const categories = [
     "Creativity",
     "Usability",
     "Design",
@@ -38,7 +38,7 @@ const voteModal = (messageTs: string): IModal => {
   ];
 
   categories.forEach((n) => {
-    let header: IHeaderBlock = {
+    const header: IHeaderBlock = {
       type: "header",
       text: {
         type: "plain_text",
@@ -47,7 +47,7 @@ const voteModal = (messageTs: string): IModal => {
       },
     };
 
-    let inputOptions: IInputBlockOptions[] = ["1", "2", "3", "4", "5"].map(
+    const inputOptions: IInputBlockOptions[] = ["1", "2", "3", "4", "5"].map(
       (n) => {
         return {
           text: {
@@ -60,7 +60,7 @@ const voteModal = (messageTs: string): IModal => {
       }
     );
 
-    let input: IInputBlock = {
+    const input: IInputBlock = {
       type: "input",
       element: {
         type: "static_select",

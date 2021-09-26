@@ -1,7 +1,6 @@
 {
   "arrowParens": "always",
   "endOfLine": "lf",
-  "jsxBracketSameLine": true,
   "useTabs": false,
   "singleQuote": false,
   "tabWidth": 2,

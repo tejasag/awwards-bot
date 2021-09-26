@@ -5,7 +5,7 @@ const submitVoteModal = async (app: AwwwardsBot) => {
   app.view(/^voteModal_(.*)$/, async ({ ack, body, view, client }) => {
     try {
       await ack();
-      let state: { [key: string]: number } = {};
+      const state: { [key: string]: number } = {};
       Object.keys(view.state.values).map((k, i) => {
         state[k] = parseInt(
           view.state.values[k]["choice"]["selected_option"]!["value"]

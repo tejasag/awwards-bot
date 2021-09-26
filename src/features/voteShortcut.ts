@@ -8,7 +8,7 @@ const voteShortcut = async (app: AwwwardsBot) => {
   app.shortcut("awwwards_vote", async ({ shortcut, ack, client }) => {
     try {
       await ack();
-      let message_id = (shortcut as MessageShortcut).message_ts;
+      const message_id = (shortcut as MessageShortcut).message_ts;
       const exists: AirtablePlusPlusRecord<AirtableField>[] =
         await app.projects.read({
           filterByFormula: `{MESSAGE_ID}="${message_id}"`,
