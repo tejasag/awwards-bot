@@ -3,6 +3,7 @@
   "endOfLine": "lf",
   "jsxBracketSameLine": true,
   "useTabs": true,
-  "singleQuote": true,
-  "semi": false
+  "singleQuote": false,
+  "tabWidth": 2,
+  "semi": true 
 }
