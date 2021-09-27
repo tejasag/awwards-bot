@@ -38,6 +38,7 @@ const voteModal = (messageTs: string): IModal => {
   ];
 
   categories.forEach((n) => {
+    /*
     const header: IHeaderBlock = {
       type: "header",
       text: {
@@ -46,6 +47,7 @@ const voteModal = (messageTs: string): IModal => {
         emoji: false,
       },
     };
+    */
 
     const inputOptions: IInputBlockOptions[] = ["1", "2", "3", "4", "5"].map(
       (n) => {

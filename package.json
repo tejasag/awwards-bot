@@ -28,8 +28,7 @@
   "scripts": {
     "start": "ts-node -r dotenv/config src/index.ts",
     "dev": "nodemon -r dotenv/config src/index.ts",
-    "test": "echo 'TODO'",
-    "build": "tsc src/index.ts --outDir dist --pretty",
+    "build": "tsc",
     "ngrok": "ngrok http 3000",
     "format": "prettier --write 'src/**/*'",
     "format:check": "prettier --check 'src/**/*'",
@@ -37,5 +36,10 @@
     "lint:check": "eslint \"src/**/*.{js,ts}\" --quiet",
     "check": "yarn run format:check && yarn run lint:check",
     "check:fix": "yarn run format && yarn run lint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint:check && yarn format:check"
+    }
   }
 }

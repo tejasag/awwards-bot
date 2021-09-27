@@ -1,0 +1,12 @@
+vesion: "3"
+services:
+  main:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/usr/src/app"
+    env_file: .env
+

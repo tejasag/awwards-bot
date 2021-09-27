@@ -6,15 +6,15 @@ const submitVoteModal = async (app: AwwwardsBot) => {
     try {
       await ack();
       const state: { [key: string]: number } = {};
-      Object.keys(view.state.values).map((k, i) => {
+      Object.keys(view.state.values).map((k) => {
         state[k] = parseInt(
-          view.state.values[k]["choice"]["selected_option"]!["value"]
+          view.state.values[k]["choice"]["selected_option"]?.["value"] as string
         );
       });
       // console.log(state);
       const published_ts_res = /^voteModal_(.*)$/.exec(view.callback_id);
-      if (!published_ts_res) console.log("Failed to exec regex");
-      const published_ts = published_ts_res![1];
+      if (!published_ts_res) return console.log("Failed to exec regex");
+      const published_ts = published_ts_res[1];
       if (!published_ts) console.log("Failed to get regex group");
 
       const project: AirtablePlusPlusRecord<Record<string, unknown>>[] =

@@ -1,11 +1,5 @@
 import { app_token, token, name } from "./config";
 import { App } from "@slack/bolt";
-import {
-  filterDM,
-  filterNoBotMessages,
-  filterChannel,
-} from "./middleware/index";
-import voteModal from "./modals/voteModal";
 import * as features from "./features/index";
 import { ProjectsDatabase, VotesDatabase, AirtableField } from "./airtable";
 import { AirtablePlusPlus } from "airtable-plusplus";
