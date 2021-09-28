@@ -18,7 +18,7 @@ export class AwwwardsBot extends App {
 
     this.projects = ProjectsDatabase;
     this.votes = VotesDatabase;
-    this.mainChannel = "C025YG64801";
+    this.mainChannel = "C02FG7J70TY";
   }
 }
 
