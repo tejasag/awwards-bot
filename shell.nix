@@ -1,7 +1,6 @@
 { pkgs ? import <nixpkgs> { } }:
-with pkgs;
 mkShell {
-  buildInputs = [
+  buildInputs = with pkgs; [
     nodejs
     yarn
   ];
