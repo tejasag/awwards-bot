@@ -3569,9 +3569,6 @@ const addProject = async (app: AwwwardsBot) => {
     const a = result.slice(i, i + 10);
     try {
       await app.projects.create(a);
-      setTimeout(() => {
-        console.log("foo");
-      }, i);
     } catch (e) {
       console.error(e);
     }
